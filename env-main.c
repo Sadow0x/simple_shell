@@ -15,5 +15,6 @@ int main(int ac, char **av, char **env)
         printf("%s\n", env[i]);
         i++;
     }
+
     return (0);
 }
