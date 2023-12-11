@@ -53,27 +53,29 @@ int main(int ac __attribute__((unused)), char **av, char **ev)
 			perror(av[0]);
 		if (id == 0)
 		{
-/*			if (_strcmp(arg, "env") == 0)
-				printenviron(ev), exit(EXIT_SUCCESS);
-*/			if (execve(argv[0], argv, ev) == -1)
-				perror(av[0]), exit(EXIT_FAILURE);
-		}
-		else
-		{
-			wait(&status);
-			for (i = 0; argv[i]; i++)
+/*
+* Commented out block:
+* if (_strcmp(arg, "env") == 0)
+*     printenviron(ev), exit(EXIT_SUCCESS);
+*/
+
+			if (execve(argv[0], argv, ev) == -1)
 			{
-				free(argv[i]);
-				argv[i] = NULL;
+			perror(av[0]);
+			exit(EXIT_FAILURE);
 			}
-			free(argv);
-			free(arg);
-			argv = NULL;
-			arg = NULL;
-			_puts("$ ");
+			else
+			{
+				wait(&status);
+				for (i = 0; argv[i]; i++)
+				{
+						free(argv[i]);
+							argv[i] = NULL;
+								}
+				free(argv);
+				free(arg);
+					argv = NULL;
+					arg = NULL;
+				_puts("$ ");
 		}
-	}
-	free(arg);
-	_putchar('\n');
-	exit(EXIT_SUCCESS);
-}
+
