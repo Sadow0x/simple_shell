@@ -20,10 +20,10 @@ int main(void)
         printf("Child process:\n");
         printf("After sleep:\nPID = %u, PPID = %u\n", getpid(), getppid());
     }
-
     else
     {
         printf("Parent process exiting...\n");
     }
+
     return (0);
 }
