@@ -18,7 +18,6 @@ int main(int ac, char **av)
         printf("Usage: %s path_to_file ...\n", av[0]);
         return (1);
     }
-    
     i = 1;
     while (av[i])
     {
@@ -33,6 +32,5 @@ int main(int ac, char **av)
         }
         i++;
     }
-    
     return (0);
 }
