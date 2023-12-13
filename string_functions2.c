@@ -1,4 +1,5 @@
 #include "shell.h"
+#include "main.h"
 
 /**
  * _strcpy - copies a string
